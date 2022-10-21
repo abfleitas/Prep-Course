@@ -57,7 +57,29 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  for(let i=0; i < arr.length; i++){
+    for(let j= i + 1; j < arr.length;j++){
+
+      console.log(arr[i]);
+      console.log(arr[j]);
+
+      if(arr[j].length < arr[i].length){
+        var aux = arr[j];
+        arr[j] = arr[i];
+        arr[i] = aux;
+        console.log(arr[i]);
+        console.log(arr[j]);
+      }
+    }
+  }
+
+  return arr;
 }
+
+//[“You", "are", "looking", "beautiful"]
+
+console.log(sortArray(["You", "are", "beautiful", "looking"]));  //(["You", "are", "looking", "beautiful"]);
+console.log(sortArray(["pera", "manzana", "alcaucil", "papa"])); //(["pera", "papa", "manzana", "alcaucil"]);
 
 
 function buscoInterseccion(arreglo1, arreglo2){
@@ -66,7 +88,22 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+  var nuevoArr = [];
+
+  for(let i=0; i < arreglo1.length; i++){
+    for(let j=0; j < arreglo2.length;j++){
+      if(arreglo1[i] === arreglo2[j]){
+        nuevoArr.push(arreglo1[i]);
+      }
+    }
+  }
+
+  return nuevoArr;
 }
+
+console.log(buscoInterseccion([1, 2 , 3], [1, 5, 8 , 3]))  //([1, 3])
+console.log(buscoInterseccion([7 , 23, 4], [23, 70]))  //([23]);
+console.log(buscoInterseccion([1, 20 , 3], [22, 5, 7]))  //([]);
 
 
 
