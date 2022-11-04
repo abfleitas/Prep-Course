@@ -57,24 +57,23 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
-  for(let i=0; i < arr.length; i++){
-    for(let j= i + 1; j < arr.length;j++){
-
-      console.log(arr[i]);
-      console.log(arr[j]);
-
+  for(let i= 0;i < arr.length;i++){
+    for(let j=i+1;j < arr.length;j++){
       if(arr[j].length < arr[i].length){
-        var aux = arr[j];
+        var auxiliar = arr[j];
         arr[j] = arr[i];
-        arr[i] = aux;
-        console.log(arr[i]);
-        console.log(arr[j]);
+        arr[i] = auxiliar;
       }
     }
   }
 
   return arr;
 }
+
+var primerValor = "juan";
+var segundoValor = "pepe";
+segundoValor = primerValor;
+console.log(segundoValor);
 
 //[“You", "are", "looking", "beautiful"]
 
@@ -90,8 +89,8 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Escribe tu código aquí  
   var nuevoArr = [];
 
-  for(let i=0; i < arreglo1.length; i++){
-    for(let j=0; j < arreglo2.length;j++){
+  for(let i=0;i<arreglo1.length;i++){
+    for(let j=0;j<arreglo2.length;j++){
       if(arreglo1[i] === arreglo2[j]){
         nuevoArr.push(arreglo1[i]);
       }
